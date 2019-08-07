@@ -1,0 +1,66 @@
+<div>
+  <div>
+    <label>Add More Family Members</label>
+    <button type="submit" (click)="addForm()">Add +</button>
+  </div>
+  <h4>Family Personal Information</h4>
+  <form [formGroup]="familyInfo" (ngSubmit)="onSubmit()">
+    <!-- <div> 
+      <label>Name:</label>
+      <input type="text" value="" formControlName="name" name="">
+    </div>
+    <div> 
+      <label>Relation:</label>
+      <select id="relatn" formControlName="relation">
+          <option *ngFor="let relatn of relation" [value]="relatn.id">{{relatn.name}}</option>
+        </select>
+      <!-- <input type="text" value="" formControlName="relation" name=""> -->
+   <!---- </div>
+    <div> 
+      <label>Gender:</label>
+      <input type="radio" value="male" formControlName="gender" name="gender">Male
+      <input type="radio" value="female" formControlName="gender" name="gender">Female
+    </div>
+    <div>
+      <label>Qualification:</label>
+      <input type="text" value="" formControlName="qualification" name="">
+    </div>
+    <div>
+      <label>Contact Number:</label>
+      <input type="text" value="" formControlName="contact" name="">
+    </div>
+    <div> 
+      <label>Occupation:</label>
+      <input type="text" value="" formControlName="occupation" name="">
+    </div>
+     -->
+    <ng-container formArrayName="aliases">
+      <div *ngFor="let a of familyInfo.get('aliases').controls; let idx = index" [formGroupName]="idx" > 
+          <label>Name:</label>
+          <input type="text" value="" formControlName="name" name=""><br>
+          <label>Relation:</label>
+          <select id="relatn" formControlName="relation">
+              <option *ngFor="let relatn of relation" [value]="relatn.id">{{relatn.name}}</option>
+            </select><br>
+          <!-- <input type="text" value="" formControlName="relation" name=""> -->
+          <label>Gender:</label>
+          <input type="radio" value="male" formControlName="gender" name="">Male
+          <input type="radio" value="female" formControlName="gender" name="">Female<br>
+          <label>Contact Number:</label>
+          <input type="text" value="" formControlName="contact" name=""><br>
+          <label>Qualification:</label>
+          <input type="text" value="" formControlName="qualification" name=""><br>
+          <label>Occupation:</label>
+          <input type="text" value="" formControlName="occupation" name=""><br>
+      </div>
+    </ng-container>
+
+    <div>
+      <button type="submit" [disabled]="!familyInfo.valid">Submit</button>
+    </div>
+  </form>
+</div>
+<p>
+  family-details works!
+</p>
+<!-- <button type="submit">Cancel</button> -->

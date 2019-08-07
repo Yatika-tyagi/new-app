@@ -1,0 +1,31 @@
+<h4>Personal Information</h4>
+<form (ngSubmit)="onSubmit()">
+ <div class="form-group">
+   <label for="ten">10th percentage*: </label>
+   <input type="text" name="tenth" value="" id="ten" [(ngModel)]="qualificationInfo.tenthper" class="form-control">
+ </div>
+  <div class="form-group">
+    <label for="twelve">12th percentage*: </label>
+    <input type="text" name="twelth" value="" id="twelve" [(ngModel)]="qualificationInfo.twelfth" class="form-control">
+  </div>
+  <div class="form-group">
+  <label>Graduation percentage*: </label>
+  <select id="grad" name="grad" [(ngModel)]="qualificationInfo.graduation">
+      <option *ngFor="let grad of graduation" [value]="grad.id"  class="form-control">{{grad.name}}</option>
+    </select>
+      <input type="text" name="graduationper" value=""  class="form-control"  [(ngModel)]="qualificationInfo.gradper">
+  </div>
+  <div class="form-group">
+      <label>Post Graduation percentage</label>
+      <select id="pg" name="pgrad" [(ngModel)]="qualificationInfo.postgraduation" >
+          <option *ngFor="let pg of postGraduation" [value]="pg.id" class="form-control">{{pg.name}}</option>
+        </select>
+          <input type="text" name="postgraduationper" value=""  class="form-control" [(ngModel)]="qualificationInfo.pgper">
+  </div>
+ <div>
+   <button type="submit">Submit</button>
+ </div>
+</form>
+<p>
+  personal-details works!
+</p>

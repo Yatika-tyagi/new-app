@@ -1,0 +1,46 @@
+<div>
+  <h4>Register Form</h4>
+  <form [formGroup]="signUp" (ngSubmit)="onsubmit()">
+    <div> 
+      <label>First Name:</label>
+      <input type="text" value="" formControlName="name" name="">
+    </div>
+    <div>
+      <label>Contact:</label>
+      <input type="text" value="" formControlName="contact" name="">
+    </div>
+    <label>Gender:</label>
+          <input type="radio" value="male" formControlName="gender" name="">Male
+          <input type="radio" value="female" formControlName="gender" name="">Female<br>
+    <div> 
+      <label>Email:</label>
+      <input type="text" value="" formControlName="email" name="">
+    </div>
+    <div> 
+      <label>Password:</label>
+      <input type="password" value="" formControlName="password" name="">
+    </div>
+    <div formGroupName="address">
+      <h4>Address:</h4>
+      <label>Street:</label>
+      <input type="text" value="" formControlName="street" name="">
+
+      <label>City:</label>
+      <input type="text" value="" formControlName="city" name="">
+
+      <label>State:</label>
+      <input type="text" value="" formControlName="state" name="">
+
+      <label>Country:</label>
+      <input type="text" value="" formControlName="country" name="">
+    </div>
+    <div>
+      <button type="submit" [disabled]="!signUp.valid">Submit</button>
+    </div>
+  </form>
+  <p>
+    register works!
+  </p>
+</div>
+
+
