@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +9,7 @@ import { HeroService } from '../hero.service';
 })
 export class RegisterComponent implements OnInit {
   signUp: FormGroup;
-  constructor(private router: Router,
-    private heroService: HeroService) {
+  constructor(private router: Router) {
           this.signUp = new FormGroup ({
             name: new FormControl(''),
             contact: new FormControl(''),

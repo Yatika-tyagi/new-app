@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HeroService } from './hero.service';
+import { DataTransferService } from './data-transfer.service';
 
-describe('HeroService', () => {
+describe('DataTransferService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: HeroService = TestBed.get(HeroService);
+    const service: DataTransferService = TestBed.get(DataTransferService);
     expect(service).toBeTruthy();
   });
 });

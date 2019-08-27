@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { FamilyDetailsComponent } from './family-details/family-details.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ParentComponentComponent } from './parent-component/parent-component.component';
+import { DataTransferService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ParentComponentComponent } from './parent-component/parent-component.co
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [DataTransferService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
